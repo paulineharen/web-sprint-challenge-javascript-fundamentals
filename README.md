@@ -27,13 +27,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Briefly compare and contrast `.forEach` & `.map` (2-3 sentences max)
 
+.foreach executues a function for each element in an array, but does not return anything. The .map will return a new array with function executed on each element in the original array.
+
 2. Explain the difference between a callback and a higher order function.
+
+A callback is a function that executes a task and is passed into another function. A higher order function takes a function as an argument.
 
 3. What is closure?
 
+A closure is a function within a function, in which it has the lexical scope to reach out to the outer function´s content.
+
 4. Describe the four rules of the 'this' keyword.
 
+When a function is in the global scope, 'this' points to the Window object. When there is a dot natation used to invoke a function, this is an implicit binding. The 'this' keyword points to the new object that is created by the 'new' keyword.
+
 5. Why do we need super() in an extended class?
+
+Super() is used to call the parent class to access the content within the parent.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
