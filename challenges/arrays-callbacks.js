@@ -20,7 +20,17 @@ const zooAnimals = [
 The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-const displayNames = [];
+
+const displayNames = []; 
+
+
+zooAnimals.forEach(functionFilter);
+
+function functionFilter(i) {
+return displayNames.push (`Name: ${i.animal_name}, Scientific: ${i.scientific_name}`);
+
+};
+
 console.log(displayNames);
 
 /* Request 2: .map()
@@ -29,16 +39,21 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-const lowCaseAnimalNames
-console.log(lowCaseAnimalNames);
+const lowCaseAnimalNames = zooAnimals.map ((lowerCaseName) => {
+  return lowerCaseName.animal_name.toLowerCase();
+  });
+  console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
 
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals
-console.log(lowPopulationAnimals);
+const lowPopulationAnimals = zooAnimals.filter ((lowPopAnimal) => {
+  return lowPopAnimal.population < 5;
+  });
+  
+  console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
 
@@ -46,6 +61,13 @@ The zoos need to know their total animal population across the United States. Fi
 
 */
 let populationTotal = 0;
+
+const animalPop = zooAnimals.reduce((total, pop) => {
+  return populationTotal += pop.population;
+},0);
+
+
+
 console.log(populationTotal);
 
 
@@ -58,6 +80,10 @@ console.log(populationTotal);
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
 */
 
+function consume (a, b, cb) {
+  return cb(a, b); 
+}
+
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
@@ -65,6 +91,17 @@ console.log(populationTotal);
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
 
+function add (num1, num2){
+  return num1 + num2;
+  }
+  
+  function multiply (num1, num2) {
+    return num1 * num2;
+  }
+  
+  function greeting (firstName, lastName) {
+    return `Hello ${firstName} ${lastName}, nice to meet you!`
+  }
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
 // console.log(consume(2, 2, add)); // 4
